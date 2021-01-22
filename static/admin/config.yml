@@ -7,13 +7,82 @@ local_backend: true
 media_folder: static/img
 public_folder: /img
 
+page_builder: &PAGE_BUILDER
+  - label: Text
+    name: text
+    widget: object
+    allow_add: true
+    summary: 'Text: {{title}}'
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Content
+        name: content
+        widget: markdown
+      - label: Columns
+        name: columns
+        widget: number
+        default: 1
+        value_type: int
+        min: 1
+        max: 2
+        step: 1
+      - label: Color
+        name: color
+        widget: select
+        multiple: false
+        options: ['blue', 'red', 'pink', 'green', 'white', 'grey']
+  - label: Gallery
+    name: gallery
+    summary: Gallery
+    fields:
+      - label: Images
+        name: images
+        widget: list
+        label_singular: image
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: URL
+            name: url
+            widget: string
+          - label: Image
+            name: image
+            widget: image
+  - label: Image
+    name: image
+    summary: Image
+    fields:
+      - label: Image
+        name: image
+        widget: image
+  - label: Links
+    name: links
+    summary: Links
+    fields:
+      - label: Links
+        name: links
+        widget: list
+        fields:
+          - label: Link
+            name: link
+            widget: string
+          - lable: Title
+            name: title
+            widget: string
+          - label: Text
+            name: text
+            widget: string
+
 collections:
-  - name: 'home'
-    label: 'Home'
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - label: 'Home'
-        name: 'home'
-        file: 'content/home.md'
+      - label: Home
+        name: home
+        file: content/home.md
         create: true
         slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
         editor:
@@ -23,42 +92,37 @@ collections:
             name: gallery
             widget: list
             allow_add: true
+            label_singular: image
+            summary: '{{title}}'
             fields:
-              - label: Image
-                name: image
-                widget: image
               - label: Title
                 name: title
+                widget: string
+              - label: SubTitle
+                name: subTitle
                 widget: string
               - label: URL
                 name: url
                 widget: string
+              - label: Image
+                name: image
+                widget: image
+
           - label: Sections
             name: sections
             widget: list
-            types:
-              - label: Text
-                name: text
-                widget: object
-                fields:
-                  - label: Title
-                    name: title
-                    widget: string
-                  - label: Text
-                    name: text
-                    widget: markdown
-              - label: Image
-                name: image
-                widget: object
-                fields:
-                  - label: Title
-                    name: title
-                    widget: string
-                  - label: Images
-                    name: images
-                    widget: list
-                    fields:
-                      - label: Image
-                        name: image
-                        widget: image
+            collapsed: true
+            types: *PAGE_BUILDER
 
+      - label: Chi siamo
+        name: about
+        file: content/about.md
+        create: true
+        slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+        editor:
+          preview: false
+        fields:
+          - label: Sections
+            name: sections
+            widget: list
+            types: *PAGE_BUILDER
