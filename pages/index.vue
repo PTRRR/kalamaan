@@ -9,10 +9,18 @@
       .home__legend
         h2.home__title {{ slide.title }}
         h3.home__title {{ slide.subTitle }}
+
+  sections.home__sections(
+    :sections="home.sections"
+  )
 </template>
 
 <script>
+import Sections from '@/components/sections/Sections'
+
 export default {
+  components: { Sections },
+
   async asyncData({ $content }) {
     const home = await $content('home').fetch()
     return {
@@ -26,9 +34,6 @@ export default {
 .home {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   &__gallery {
     width: 100%;
