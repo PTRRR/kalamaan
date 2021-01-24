@@ -30,8 +30,6 @@ export default {
 
 <style lang="scss">
 .gallery {
-  $gap: 0.2rem;
-
   &__columns {
     margin: auto;
     max-width: $s-max-width;

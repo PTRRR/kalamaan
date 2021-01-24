@@ -13,10 +13,8 @@ export default {
 </script>
 
 <style lang="scss">
-@font-face {
-  font-family: Pressura;
-  src: url('~static/fonts/GT-Pressura-Regular-Trial.woff2');
-}
+@import '@/styles/reset';
+@import '@/styles/main';
 
 * {
   box-sizing: border-box;
@@ -25,7 +23,7 @@ export default {
 html,
 body {
   margin: 0;
-  font-family: Pressura, Arial, Helvetica, sans-serif;
+  font-family: $font, Arial, Helvetica, sans-serif;
   font-size: 22px;
 }
 </style>

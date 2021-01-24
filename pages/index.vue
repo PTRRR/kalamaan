@@ -8,7 +8,7 @@
       img(:src="slide.image")
       .home__legend
         h2.home__title {{ slide.title }}
-        h3.home__title {{ slide.subTitle }}
+        h3.home__sub-title {{ slide.subTitle }}
 
   sections.home__sections(
     :sections="home.sections"
@@ -57,12 +57,16 @@ export default {
     left: 0;
     bottom: 0;
     padding: 1em;
+  }
 
-    h2,
-    h3 {
-      margin: 0;
-      color: white;
-    }
+  &__title,
+  &__sub-title {
+    font-family: $font-medium;
+    color: white;
+  }
+
+  &__sub-title {
+    font-size: 2rem;
   }
 }
 </style>

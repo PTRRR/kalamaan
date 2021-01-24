@@ -1,0 +1,31 @@
+@mixin colorClasses {
+  &--white {
+    background-color: $white;
+    color: $black;
+  }
+
+  &--red {
+    background-color: $red;
+    color: $white;
+  }
+
+  &--pink {
+    background-color: $pink;
+    color: $white;
+  }
+
+  &--green {
+    background-color: $green;
+    color: $white;
+  }
+
+  &--skin {
+    background-color: $skin;
+    color: $white;
+  }
+
+  &--orange {
+    background-color: $orange;
+    color: $white;
+  }
+}

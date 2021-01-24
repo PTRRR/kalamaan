@@ -7,7 +7,7 @@ gallery:
 sections:
   - type: text
     columns: 1
-    title: Title 1
+    title: Kalamaan
     content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
       venenatis blandit neque id pharetra. Fusce iaculis hendrerit vestibulum.
       Nulla suscipit lorem eget leo finibus aliquam. Aenean sed ligula rutrum,
@@ -19,7 +19,7 @@ sections:
       tortor, vitae sollicitudin mi feugiat id. Nullam finibus finibus risus,
       non vehicula ex molestie sit amet. Fusce maximus tellus augue, non feugiat
       massa ultrices sed.
-    color: pink
+    color: white
   - type: gallery
     images:
       - title: vcvyxcvyxc

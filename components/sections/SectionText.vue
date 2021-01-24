@@ -1,5 +1,7 @@
 <template lang="pug">
-  .text
+  .text(
+    :class="getColorClass(data)"
+  )
     h1(
       v-if="data.title"
     ) {{ data.title }}
@@ -24,11 +26,17 @@ export default {
         columns: data.columns,
       }
     },
+
+    getColorClass(data) {
+      return [`text--${data.color}`]
+    },
   },
 }
 </script>
 
 <style lang="scss">
+@import '@/styles/mixins';
+
 .text {
   padding: $h-padding;
 
@@ -37,14 +45,20 @@ export default {
   }
 
   h1 {
+    font-family: $font-medium;
+    font-size: 2rem;
     margin: auto;
-    margin-bottom: 1rem;
     max-width: $s-max-width;
+    border-color: inherit;
+    border-bottom: solid 3px;
+    margin-bottom: 0.8rem;
   }
 
   p {
     margin: auto;
     max-width: $s-max-width;
   }
+
+  @include colorClasses;
 }
 </style>

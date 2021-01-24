@@ -12,6 +12,7 @@
 
 <style lang="scss">
 .menu {
+  font-family: $font-medium;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -21,7 +22,8 @@
   left: 0;
 
   a {
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    color: white;
   }
 
   &__sections {
