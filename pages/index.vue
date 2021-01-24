@@ -31,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/styles/mixins';
+
 .home {
   width: 100%;
   min-height: 100vh;
@@ -67,6 +69,7 @@ export default {
 
   &__sub-title {
     font-size: 2rem;
+    @include heading-crop;
   }
 }
 </style>

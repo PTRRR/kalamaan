@@ -30,6 +30,8 @@ export default {
 
 <style lang="scss">
 .gallery {
+  background-color: $white;
+
   &__columns {
     margin: auto;
     max-width: $s-max-width;

@@ -12,3 +12,11 @@
   font-family: Theinhard-Regular;
   src: url('~static/fonts/theinhard-regular.ttf');
 }
+
+a {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

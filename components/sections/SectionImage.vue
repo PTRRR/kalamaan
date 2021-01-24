@@ -16,6 +16,8 @@ export default {
 
 <style lang="scss">
 .image {
+  background-color: $white;
+
   img {
     display: block;
     margin: auto;

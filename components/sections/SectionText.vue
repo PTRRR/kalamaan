@@ -51,7 +51,9 @@ export default {
     max-width: $s-max-width;
     border-color: inherit;
     border-bottom: solid 3px;
+    padding-bottom: 0.8rem;
     margin-bottom: 0.8rem;
+    @include heading-crop;
   }
 
   p {
@@ -59,6 +61,6 @@ export default {
     max-width: $s-max-width;
   }
 
-  @include colorClasses;
+  @include color-classes;
 }
 </style>
