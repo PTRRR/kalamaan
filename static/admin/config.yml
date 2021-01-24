@@ -126,3 +126,24 @@ collections:
             name: sections
             widget: list
             types: *PAGE_BUILDER
+
+      - label: Novita
+        name: novita
+        file: content/novita.md
+        editor:
+          preview: false
+        fields:
+          - label: Sections
+            name: sections
+            widget: list
+            types: *PAGE_BUILDER
+
+      - label: Contatti
+        name: contatti
+        file: content/contatti.md
+        editor:
+          preview: false
+        fields:
+          - label: Text
+            name: text
+            widget: markdown
