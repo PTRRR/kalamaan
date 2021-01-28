@@ -37,6 +37,7 @@ footer.footer
     margin: -0.5rem 0;
     background-color: $red;
     color: $white !important;
+    width: min-content;
   }
 
   &__inner {
@@ -44,6 +45,20 @@ footer.footer
     justify-content: space-between;
     margin: auto;
     max-width: $s-max-width;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: $h-padding * 0.5 1rem;
+
+    &__inner {
+      display: block;
+    }
+
+    &__column {
+      & + & {
+        margin-top: 1rem;
+      }
+    }
   }
 }
 </style>
