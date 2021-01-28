@@ -34,6 +34,7 @@ body {
   margin: 0;
   font-family: $font, Arial, Helvetica, sans-serif;
   font-size: #{$font-size}px;
+  background-color: $white;
 }
 
 .app {

@@ -60,7 +60,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: $menu-padding;
   position: fixed;
   top: 0;
   left: 0;
@@ -73,10 +73,15 @@ export default {
     color: $white;
   }
 
+  &--text {
+    mix-blend-mode: difference;
+    color: $white;
+  }
+
   &--text,
   &--panel {
-    color: $black;
-    background-color: $white;
+    // color: $black;
+    // background-color: $white;
   }
 
   a {
@@ -85,9 +90,9 @@ export default {
   }
 
   &--highlight {
-    padding: 0.5rem;
-    margin: -0.5rem 0;
-    background-color: $red;
+    padding: $menu-padding * 0.5;
+    margin: -$menu-padding * 0.5 0;
+    background-color: invert($red);
     color: $white !important;
   }
 

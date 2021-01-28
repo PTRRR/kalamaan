@@ -58,7 +58,7 @@ export default {
     position: absolute;
     left: 0;
     bottom: 0;
-    padding: 1em;
+    padding: $menu-padding;
   }
 
   &__title,

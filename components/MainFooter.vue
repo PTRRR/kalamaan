@@ -34,8 +34,8 @@ footer.footer
 
   &--hightlight {
     @include regular-crop;
-    padding: 0.5rem;
-    margin: -0.5rem 0;
+    padding: $menu-padding * 0.5;
+    margin: -$menu-padding * 0.5 0;
     background-color: $red;
     color: $white !important;
     width: min-content;
