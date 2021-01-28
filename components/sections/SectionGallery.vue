@@ -58,6 +58,8 @@ export default {
   &__column {
     width: 33%;
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   &__image {
@@ -65,9 +67,12 @@ export default {
     display: flex;
     width: 100%;
     align-items: center;
+    flex: 1 1 auto;
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
