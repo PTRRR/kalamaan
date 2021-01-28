@@ -1,11 +1,11 @@
 <template lang="pug">
-  .sections
-    .sections__item(
-      v-for="(section, index) in sections"
-      :key="index"
-      :is="getSectionName(section)"
-      :data="section"
-    )
+.sections
+  .sections__item(
+    v-for='(section, index) in sections',
+    :key='index',
+    :is='getSectionName(section)',
+    :data='section'
+  )
 </template>
 
 <script>

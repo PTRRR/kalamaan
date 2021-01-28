@@ -1,6 +1,6 @@
 <template lang="pug">
-  .image
-    img(:src="data.image")
+figure.image
+  img(:src='data.image')
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 <template lang="pug">
-.text(:class='getColorClass(data)')
-  h1(v-if='data.title') {{ data.title }}
-
+article.text(:class='getTextClasses(data)')
+  h2(v-if='data.title') {{ data.title }}
   p(:style='getParagraphCssStyle(data)') {{ data.content }}
 </template>
 
@@ -21,8 +20,8 @@ export default {
       }
     },
 
-    getColorClass(data) {
-      return [`text--${data.color}`]
+    getTextClasses(data) {
+      return [`text--${data.color}`, { 'text--columns': data.columns > 1 }]
     },
   },
 }
@@ -32,27 +31,34 @@ export default {
 @import '@/styles/mixins';
 
 .text {
+  $t: &;
   padding: $h-padding * 0.5;
 
   & + & {
     padding-top: 0;
   }
 
-  h1 {
+  h2 {
     font-family: $font-medium;
     font-size: 2rem;
-    margin: auto;
-    max-width: $s-max-width * 1.5;
     border-color: inherit;
-    border-bottom: solid $border-width;
+    /* border-bottom: solid $border-width; */
     padding-bottom: 0.8rem;
     margin-bottom: 0.8rem;
     @include heading-crop;
   }
 
+  h2,
   p {
     margin: auto;
-    max-width: $s-max-width * 1.5;
+    max-width: $s-max-width;
+  }
+
+  &--columns {
+    h2,
+    p {
+      max-width: $s-max-width * 1.5;
+    }
   }
 
   @media screen and (max-width: 1000px) {

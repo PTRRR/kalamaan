@@ -3,7 +3,7 @@
   .gallery__columns
     .gallery__columns-inner
       .gallery__column(v-for='index in columns')
-        .gallery__image(
+        figure.gallery__image(
           v-for='image in getColumnImages(data.images, index - 1)'
         )
           img(:src='image.image')
@@ -63,7 +63,7 @@ export default {
   }
 
   &__image {
-    padding: 0.2rem;
+    padding: $gap;
     display: flex;
     width: 100%;
     align-items: center;

@@ -4,5 +4,7 @@ module.exports = {
   // https://stylelint.io/user-guide/configuration
   rules: {
     'at-rule-no-unknown': null,
+    'comment-empty-line-before': null,
+    'declaration-empty-line-before': null,
   },
 }
