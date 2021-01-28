@@ -1,14 +1,8 @@
 <template lang="pug">
-  .text(
-    :class="getColorClass(data)"
-  )
-    h1(
-      v-if="data.title"
-    ) {{ data.title }}
+.text(:class='getColorClass(data)')
+  h1(v-if='data.title') {{ data.title }}
 
-    p(
-      :style="getParagraphCssStyle(data)"
-    ) {{ data.content }}
+  p(:style='getParagraphCssStyle(data)') {{ data.content }}
 </template>
 
 <script>
@@ -38,7 +32,7 @@ export default {
 @import '@/styles/mixins';
 
 .text {
-  padding: $h-padding;
+  padding: $h-padding * 0.5;
 
   & + & {
     padding-top: 0;
@@ -59,6 +53,12 @@ export default {
   p {
     margin: auto;
     max-width: $s-max-width;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    p {
+      columns: 1 !important;
+    }
   }
 
   @include color-classes;

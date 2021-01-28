@@ -1,14 +1,12 @@
 <template lang="pug">
-  .gallery
-    .gallery__columns
-      .gallery__columns-inner
-        .gallery__column(
-          v-for="index in 3"
+.gallery
+  .gallery__columns
+    .gallery__columns-inner
+      .gallery__column(v-for='index in columns')
+        .gallery__image(
+          v-for='image in getColumnImages(data.images, index - 1)'
         )
-          .gallery__image(
-            v-for="image in getColumnImages(data.images, index - 1)"
-          )
-            img(:src="image.image")
+          img(:src='image.image')
 </template>
 
 <script>
@@ -20,9 +18,24 @@ export default {
     },
   },
 
+  data() {
+    return {
+      columns: 3,
+    }
+  },
+
+  mounted() {
+    window.addEventListener('resize', () => this.updateColumns())
+    this.updateColumns()
+  },
+
   methods: {
+    updateColumns() {
+      this.columns = window.innerWidth <= 720 ? 2 : 3
+    },
+
     getColumnImages(images, columnIndex) {
-      return images.filter((it, index) => index % 3 === columnIndex)
+      return images.filter((it, index) => index % this.columns === columnIndex)
     },
   },
 }
@@ -51,6 +64,7 @@ export default {
     padding: 0.2rem;
     display: flex;
     width: 100%;
+    align-items: center;
 
     img {
       width: 100%;
