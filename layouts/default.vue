@@ -2,13 +2,15 @@
 .app(:class='appCssClasse')
   main-menu
   nuxt
+  main-footer
 </template>
 
 <script>
 import MainMenu from '@/components/MainMenu'
+import MainFooter from '@/components/MainFooter'
 
 export default {
-  components: { MainMenu },
+  components: { MainMenu, MainFooter },
   computed: {
     appCssClasse() {
       return {
