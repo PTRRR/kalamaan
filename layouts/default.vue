@@ -1,5 +1,5 @@
 <template lang="pug">
-.app
+.app(:class='appCssClasse')
   main-menu
   nuxt
 </template>
@@ -9,6 +9,13 @@ import MainMenu from '@/components/MainMenu'
 
 export default {
   components: { MainMenu },
+  computed: {
+    appCssClasse() {
+      return {
+        'app--lock': this.$store.getters.menuPanel,
+      }
+    },
+  },
 }
 </script>
 
@@ -25,5 +32,14 @@ body {
   margin: 0;
   font-family: $font, Arial, Helvetica, sans-serif;
   font-size: 22px;
+}
+
+.app {
+  @media screen and (max-width: $mobile-breakpoint) {
+    &--lock {
+      height: 100vh;
+      overflow: hidden;
+    }
+  }
 }
 </style>

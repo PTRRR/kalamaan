@@ -44,7 +44,7 @@ export default {
     margin: auto;
     max-width: $s-max-width * 1.5;
     border-color: inherit;
-    border-bottom: solid 3px;
+    border-bottom: solid $border-width;
     padding-bottom: 0.8rem;
     margin-bottom: 0.8rem;
     @include heading-crop;

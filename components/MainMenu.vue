@@ -1,15 +1,28 @@
 <template lang="pug">
-  .menu(
-    :class="cssClasses"
-  )
-    .menu__home
-      a Kalamaan
+.menu(:class='cssClasses')
+  .menu__home
+    a Kalamaan
 
-    .menu__sections
+  .menu__sections
+    a Chi siamo
+    a Novita
+    a Contatti
+    a.menu--highlight Dona
+
+  .menu__mobile
+    .menu__donation
+      a.menu--highlight Dona
+
+    .menu__burger(@click='$store.commit("toggleMenuPanel")')
+      .menu__burger-line
+      .menu__burger-line
+      .menu__burger-line
+
+  .menu__panel
+    .menu__panel-sections
       a Chi siamo
       a Novita
       a Contatti
-      a.menu--highlight Dona
 </template>
 
 <script>
@@ -17,12 +30,16 @@ export default {
   data() {
     return {
       mode: 'image',
+      panel: false,
     }
   },
 
   computed: {
     cssClasses() {
-      return [`menu--${this.mode}`]
+      return [
+        `menu--${this.mode}`,
+        { 'menu--panel': this.$store.getters.menuPanel },
+      ]
     },
   },
 
@@ -42,12 +59,14 @@ export default {
   background-color: $white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
+  $m: &;
 
   a {
     display: block;
@@ -61,11 +80,82 @@ export default {
     color: $white !important;
   }
 
+  &__panel-sections {
+    width: 40%;
+
+    a {
+      text-align: center;
+    }
+
+    a + a {
+      margin-top: 1rem;
+    }
+  }
+
   &__sections {
     display: flex;
 
     a + a {
       margin-left: 1rem;
+    }
+  }
+
+  &__mobile {
+    display: none;
+  }
+
+  &__mobile,
+  &__home {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__burger {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: -0.25rem 0;
+    margin-left: 1rem;
+
+    &-line {
+      width: 100%;
+      height: $border-width;
+      background-color: $black;
+    }
+  }
+
+  &__panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, -100%);
+    transition: transform 0.3s ease-in-out;
+
+    #{$m}--panel & {
+      transform: translate(0, 0);
+    }
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    &__sections {
+      display: none;
+    }
+
+    &__mobile {
+      display: flex;
+    }
+
+    &__panel {
+      display: flex;
     }
   }
 }
