@@ -1,10 +1,17 @@
 <template lang="pug">
 article.text(:class='getTextClasses(data)')
-  h2(v-if='data.title') {{ data.title }}
-  p(:style='getParagraphCssStyle(data)') {{ data.content }}
+  .text__title
+    h2(v-if='data.title') {{ data.title }}
+
+  .text__content(
+    :style="getParagraphCssStyle(data)"
+    v-html="renderMarkdown(data.content)"
+  )
 </template>
 
 <script>
+import MarkdownIt from 'markdown-it'
+
 export default {
   props: {
     data: {
@@ -14,6 +21,11 @@ export default {
   },
 
   methods: {
+    renderMarkdown(markdown) {
+      const md = new MarkdownIt()
+      return md.render(markdown)
+    },
+
     getParagraphCssStyle(data) {
       return {
         columns: data.columns,
@@ -32,7 +44,7 @@ export default {
 
 .text {
   $t: &;
-  padding: $h-padding * 0.5;
+  padding: $v-padding $h-padding;
 
   & + & {
     padding-top: 0;
@@ -40,29 +52,47 @@ export default {
 
   h2 {
     font-family: $font-medium;
-    font-size: 2rem;
     border-color: inherit;
-    /* border-bottom: solid $border-width; */
-    padding-bottom: 0.8rem;
-    margin-bottom: 0.8rem;
+    border-bottom: solid $border-width;
+    width: max-content;
+    text-transform: uppercase;
+    padding-bottom: $v-padding * 0.5;
+    margin-bottom: $v-padding * 0.5;
     @include heading-crop;
   }
 
-  h2,
   p {
+    font-family: $font-medium;
+  }
+
+  &__title,
+  &__content {
     margin: auto;
     max-width: $s-max-width;
   }
 
   &--columns {
-    h2,
+    h2 {
+      font-family: $font-medium;
+      font-size: $small-font-size;
+    }
+
     p {
-      max-width: $s-max-width * 1.5;
+      font-family: $font-medium;
+      font-size: $small-font-size;
+      line-height: 1.3;
     }
   }
 
+  p + p {
+    margin-top: 0.5em;
+    text-indent: 1.5em;
+  }
+
   @media screen and (max-width: 1000px) {
-    p {
+    padding: $v-padding $h-padding-mobile;
+
+    &__content {
       columns: 1 !important;
     }
   }

@@ -17,12 +17,17 @@ export default {
 <style lang="scss">
 .image {
   background-color: $white;
+  padding: 0 $h-padding;
 
   img {
     display: block;
     margin: auto;
     width: 100%;
     max-width: $s-max-width;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: 0 $gap * 2;
   }
 }
 </style>

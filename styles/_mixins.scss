@@ -36,7 +36,7 @@
   &--green,
   &--skin,
   &--orange {
-    margin: $h-padding * 0.5 0;
+    margin: $v-padding 0;
   }
 
   @media screen and (max-width: $mobile-breakpoint) {
@@ -45,32 +45,20 @@
     &--green,
     &--skin,
     &--orange {
-      margin: 1rem 0;
+      margin: $gap * 2 0;
     }
   }
 }
 
-@mixin text-crop(
-  $font-size: 22,
-  $top-adjustment: 0px,
-  $bottom-adjustment: 0px
-) {
+@mixin text-crop($font-size: 22, $top-adjustment: 0px, $bottom-adjustment: 0px) {
   $top-crop: 0;
   $bottom-crop: 0;
   $crop-font-size: $font-size;
   $crop-line-height: $line-height;
 
-  $dynamic-top-crop: max(
-      ($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)),
-      0
-    ) / $crop-font-size;
-  $dynamic-bottom-crop: max(
-      (
-        $bottom-crop + ($line-height - $crop-line-height) *
-          ($crop-font-size / 2)
-      ),
-      0
-    ) / $crop-font-size;
+  $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+  $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) /
+    $crop-font-size;
 
   line-height: $line-height;
 
@@ -96,5 +84,5 @@
 }
 
 @mixin heading-crop {
-  @include text-crop(44, -5px, -15px);
+  @include text-crop(44, -5px, -0.4em);
 }

@@ -32,21 +32,11 @@ export default {
 
 <style lang="scss">
 .sections {
-  padding-bottom: $h-padding;
+  padding-bottom: $v-padding;
   overflow: hidden;
 
-  &__item {
-    padding-left: $h-padding;
-    padding-right: $h-padding;
-  }
-
   @media screen and (max-width: $mobile-breakpoint) {
-    padding-bottom: 1rem;
-
-    &__item {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
+    padding-bottom: $gap * 2;
   }
 }
 </style>

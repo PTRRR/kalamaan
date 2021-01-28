@@ -16,6 +16,7 @@ page_builder: &PAGE_BUILDER
     fields:
       - label: Title
         name: title
+        required: false
         widget: string
       - label: Content
         name: content

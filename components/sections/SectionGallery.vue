@@ -44,6 +44,7 @@ export default {
 <style lang="scss">
 .gallery {
   background-color: $white;
+  padding: 0 $h-padding;
 
   &__columns {
     margin: auto;
@@ -68,12 +69,17 @@ export default {
     width: 100%;
     align-items: center;
     flex: 1 1 auto;
+    height: min-content;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: 0 $gap * 2;
   }
 }
 </style>

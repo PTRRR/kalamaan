@@ -25,7 +25,8 @@ footer.footer
 .footer {
   color: $white;
   background-color: $green;
-  padding: $h-padding * 0.5 $h-padding;
+  padding: $v-padding $h-padding;
+  font-family: $font-medium;
 
   a {
     display: block;
@@ -48,7 +49,7 @@ footer.footer
   }
 
   @media screen and (max-width: $mobile-breakpoint) {
-    padding: $h-padding * 0.5 1rem;
+    padding: $v-padding;
 
     &__inner {
       display: block;

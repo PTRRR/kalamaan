@@ -8,18 +8,18 @@ sections:
   - type: text
     columns: 1
     title: Kalamaan
-    content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+    content: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
       venenatis blandit neque id pharetra. Fusce iaculis hendrerit vestibulum.
       Nulla suscipit lorem eget leo finibus aliquam. Aenean sed ligula rutrum,
-      rutrum elit sit amet, tincidunt enim. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit. Nulla cursus, ligula ut iaculis volutpat,
-      tellus diam lobortis nisi, porttitor placerat mauris erat nec elit. Nam ac
-      nulla neque. Aliquam posuere erat sit amet turpis gravida, sit amet
-      imperdiet nibh feugiat. Mauris ut lobortis sem. Aliquam maximus vestibulum
-      tortor, vitae sollicitudin mi feugiat id. Nullam finibus finibus risus,
-      non vehicula ex molestie sit amet. Fusce maximus tellus augue, non feugiat
-      massa ultrices sed.
-    color: white
+      rutrum elit sit amet, tincidunt enim.
+
+
+      Dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+
+
+      Nam ac nulla neque. Aliquam posuere erat sit amet turpis gravida, sit amet imperdiet nibh feugiat. Mauris ut lobortis sem. Aliquam maximus vestibulum tortor, vitae sollicitudin mi feugiat id.
+    color: green
   - type: gallery
     images:
       - title: vcvyxcvyxc
@@ -42,7 +42,7 @@ sections:
         url: asdf
   - type: text
     columns: 2
-    title: Test
+    title: La nuova scuola
     content: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
       venenatis blandit neque id pharetra. Fusce iaculis hendrerit vestibulum.
@@ -51,13 +51,13 @@ sections:
       consectetur adipiscing elit. Nulla cursus, ligula ut iaculis volutpat,
       tellus diam lobortis nisi, porttitor placerat mauris erat nec elit. Nam ac
       nulla neque. Aliquam posuere erat sit amet turpis gravida, sit amet
-      imperdiet nibh feugiat. Mauris ut lobortis sem. Aliquam maximus vestibulum
-      tortor, vitae sollicitudin mi feugiat id. Nullam finibus finibus risus,
-      non vehicula ex molestie sit amet. Fusce maximus tellus augue, non feugiat
-      massa ultrices sed.
+      imperdiet nibh feugiat.
 
 
-      Vestibulum tellus purus, bibendum ut tincidunt at, tempus et ex. Donec et dolor lacinia, ultrices odio at, vehicula sapien. Vestibulum tempus posuere leo non auctor. Proin feugiat mauris in fringilla viverra. Pellentesque faucibus sodales molestie. Nam sodales purus nec sodales tincidunt. Nunc vestibulum blandit elit, vel elementum nulla luctus id. Suspendisse purus nisl, blandit et dictum tempus, ultrices bibendum tellus. Cras placerat blandit nibh, et volutpat purus laoreet non. Duis nisi velit, malesuada at mattis in, pretium id augue. Aliquam pharetra felis ac blandit ultrices. Aenean id nulla sed justo placerat imperdiet.
+      Mauris ut lobortis sem. Aliquam maximus vestibulum tortor, vitae sollicitudin mi feugiat id. Nullam finibus finibus risus, non vehicula ex molestie sit amet. Fusce maximus tellus augue, non feugiat massa ultrices sed. Vestibulum tellus purus, bibendum ut tincidunt at, tempus et ex. Donec et dolor lacinia, ultrices odio at, vehicula sapien. Vestibulum tempus posuere leo non auctor.
+
+
+      Proin feugiat mauris in fringilla viverra. Pellentesque faucibus sodales molestie. Nam sodales purus nec sodales tincidunt. Nunc vestibulum blandit elit, vel elementum nulla luctus id. Suspendisse purus nisl, blandit et dictum tempus, ultrices bibendum tellus. Cras placerat blandit nibh, et volutpat purus laoreet non. Duis nisi velit, malesuada at mattis in, pretium id augue. Aliquam pharetra felis ac blandit ultrices. Aenean id nulla sed justo placerat imperdiet.
     color: pink
   - type: image
     image: /img/foto-06-10-18-16-01-22-43c158a6-5a9b-11eb-85aa-02a8dc75caa2-2.jpg
