@@ -56,7 +56,6 @@ export default {
 
 .menu {
   font-family: $font-medium;
-  background-color: $white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,7 +65,19 @@ export default {
   top: 0;
   left: 0;
   z-index: 100;
+  transition: color $transition-duration ease-in-out,
+    background-color $transition-duration ease-in-out;
   $m: &;
+
+  &--image {
+    color: $white;
+  }
+
+  &--text,
+  &--panel {
+    color: $black;
+    background-color: $white;
+  }
 
   a {
     display: block;
@@ -123,7 +134,15 @@ export default {
     &-line {
       width: 100%;
       height: $border-width;
-      background-color: $black;
+
+      #{$m}--image & {
+        background-color: $white;
+      }
+
+      #{$m}--text &,
+      #{$m}--panel & {
+        background-color: $black;
+      }
     }
   }
 
@@ -138,7 +157,7 @@ export default {
     justify-content: center;
     align-items: center;
     transform: translate(0, -100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform $transition-duration ease-in-out;
 
     #{$m}--panel & {
       transform: translate(0, 0);
