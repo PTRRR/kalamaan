@@ -42,7 +42,7 @@ export default {
     font-family: $font-medium;
     font-size: 2rem;
     margin: auto;
-    max-width: $s-max-width;
+    max-width: $s-max-width * 1.5;
     border-color: inherit;
     border-bottom: solid 3px;
     padding-bottom: 0.8rem;
@@ -52,10 +52,10 @@ export default {
 
   p {
     margin: auto;
-    max-width: $s-max-width;
+    max-width: $s-max-width * 1.5;
   }
 
-  @media screen and (max-width: $mobile-breakpoint) {
+  @media screen and (max-width: 1000px) {
     p {
       columns: 1 !important;
     }
