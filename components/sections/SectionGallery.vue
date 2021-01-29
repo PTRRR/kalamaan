@@ -32,6 +32,7 @@ export default {
   methods: {
     updateColumns() {
       this.columns = window.innerWidth <= 720 ? 2 : 3
+      this.columns = window.innerWidth <= 520 ? 1 : this.columns
     },
 
     getColumnImages(images, columnIndex) {

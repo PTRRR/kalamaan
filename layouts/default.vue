@@ -51,5 +51,9 @@ body {
       overflow: hidden;
     }
   }
+
+  @media screen and (max-width: $small-screen) {
+    font-size: 20px;
+  }
 }
 </style>
