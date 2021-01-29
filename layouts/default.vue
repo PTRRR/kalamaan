@@ -11,13 +11,7 @@ import MainFooter from '@/components/MainFooter'
 
 export default {
   components: { MainMenu, MainFooter },
-  async asyncData({ $content }) {
-    const about = await $content('contatti').fetch()
-    console.log(about)
-    return {
-      about,
-    }
-  },
+
   computed: {
     appCssClasse() {
       return {
