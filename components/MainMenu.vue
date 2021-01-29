@@ -1,11 +1,11 @@
 <template lang="pug">
 .menu(:class='cssClasses')
   .menu__home
-    a Kalamaan
+    nuxt-link(to='/') Kalamaan
 
   .menu__sections
     a Chi siamo
-    a Novita
+    nuxt-link(to='/novita') Novita
     a Contatti
     a.menu--highlight Dona
 
@@ -21,7 +21,7 @@
   .menu__panel
     .menu__panel-sections
       a Chi siamo
-      a Novita
+      nuxt-link(to='/novita') Novita
       a Contatti
 </template>
 
