@@ -2,13 +2,14 @@
 footer.footer
   .footer__inner
     .footer__column
-      p Kalamaan
-      p Ch. des Cerisiers 1
-      p 1020 Renens
-      p Suisse
+      div(v-html='renderMarkdown(aboutPage.address)')
       br
-      p T +41 78 654 98 37
-      p M info@kalamaan.ch
+      p.footer__row
+        span T
+        span {{ aboutPage.phone }}
+      p.footer__row
+        span M
+        span {{ aboutPage.mail }}
 
     .footer__column
       a Chi siamo
@@ -18,6 +19,21 @@ footer.footer
     .footer__column
       a.footer--hightlight Dona
 </template>
+
+<script>
+import { mapGetters } from 'vuex'
+import { renderMarkdown } from '@/utils/markdown'
+
+export default {
+  computed: {
+    ...mapGetters(['aboutPage']),
+  },
+
+  methods: {
+    renderMarkdown,
+  },
+}
+</script>
 
 <style lang="scss">
 @import '@/styles/mixins';
@@ -46,6 +62,15 @@ footer.footer
     justify-content: space-between;
     margin: auto;
     max-width: $s-max-width;
+  }
+
+  &__row {
+    display: flex;
+
+    span:nth-child(1) {
+      display: block;
+      width: 1.5rem;
+    }
   }
 
   @media screen and (max-width: $mobile-breakpoint) {

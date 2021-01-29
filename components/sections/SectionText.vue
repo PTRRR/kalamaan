@@ -4,8 +4,8 @@ article.text(:class='getTextClasses(data)')
     h2(v-if='data.title') {{ data.title }}
 
   .text__content(
-    :style="getParagraphCssStyle(data)"
-    v-html="renderMarkdown(data.content)"
+    :style='getParagraphCssStyle(data)',
+    v-html='renderMarkdown(data.content)'
   )
 </template>
 
@@ -33,7 +33,15 @@ export default {
     },
 
     getTextClasses(data) {
-      return [`text--${data.color}`, { 'text--columns': data.columns > 1 }]
+      return [
+        `text--${data.color}`,
+        {
+          'text--columns': data.columns > 1,
+          'text--margins': data.margins,
+          'text--center': data.center,
+          'text--serif': data.serif,
+        },
+      ]
     },
   },
 }
@@ -45,24 +53,20 @@ export default {
 .text {
   $t: &;
   padding: $v-padding $h-padding;
+  font-family: $font-medium;
 
   & + & {
     padding-top: 0;
   }
 
   h2 {
-    font-family: $font-medium;
     border-color: inherit;
-    border-bottom: solid $border-width;
+    /* border-bottom: solid $border-width; */
     width: max-content;
     text-transform: uppercase;
     padding-bottom: $v-padding * 0.5;
     margin-bottom: $v-padding * 0.5;
     @include heading-crop;
-  }
-
-  p {
-    font-family: $font-medium;
   }
 
   &__title,
@@ -73,14 +77,32 @@ export default {
 
   &--columns {
     h2 {
-      font-family: $font-medium;
       font-size: $small-font-size;
     }
 
     p {
-      font-family: $font-medium;
       font-size: $small-font-size;
       line-height: 1.3;
+    }
+  }
+
+  &--margins {
+    margin: $v-padding 0;
+  }
+
+  &--center {
+    text-align: center;
+
+    h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &--serif {
+    p {
+      font-family: $font-serif;
+      line-height: 1.25;
     }
   }
 
@@ -94,6 +116,12 @@ export default {
 
     &__content {
       columns: 1 !important;
+    }
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    &--margins {
+      margin: $gap * 2 0;
     }
   }
 

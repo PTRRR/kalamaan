@@ -73,15 +73,15 @@ export default {
     color: $white;
   }
 
-  &--text {
+  /* &--text {
     mix-blend-mode: difference;
     color: $white;
-  }
+  } */
 
   &--text,
   &--panel {
-    // color: $black;
-    // background-color: $white;
+    color: $black;
+    background-color: $white;
   }
 
   a {
@@ -92,8 +92,8 @@ export default {
   &--highlight {
     padding: $menu-padding * 0.5;
     margin: -$menu-padding * 0.5 0;
-    background-color: invert($red);
-    color: $white !important;
+    background-color: $red;
+    color: inherit;
   }
 
   &__panel-sections {

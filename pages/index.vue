@@ -1,18 +1,13 @@
 <template lang="pug">
 .home
   .home__gallery
-    a.home__image(
-      v-for="slide in home.gallery"
-      :href="slide.url"
-    )
-      img(:src="slide.image")
+    a.home__image(v-for='slide in home.gallery', :href='slide.url')
+      img(:src='slide.image')
       .home__legend
         h2.home__title {{ slide.title }}
         h3.home__sub-title {{ slide.subTitle }}
 
-  sections.home__sections(
-    :sections="home.sections"
-  )
+  sections.home__sections(:sections='home.sections')
 </template>
 
 <script>

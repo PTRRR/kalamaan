@@ -33,7 +33,19 @@ page_builder: &PAGE_BUILDER
         name: color
         widget: select
         multiple: false
-        options: ['blue', 'red', 'pink', 'green', 'white', 'grey']
+        options: ['orange', 'red', 'pink', 'green', 'white', 'skin']
+      - label: Margins
+        name: margins
+        required: false
+        widget: boolean
+      - label: Center
+        name: center
+        required: false
+        widget: boolean
+      - label: Serif
+        name: serif
+        required: false
+        widget: boolean
   - label: Gallery
     name: gallery
     summary: Gallery
@@ -145,6 +157,15 @@ collections:
         editor:
           preview: false
         fields:
+          - label: Address
+            name: address
+            widget: markdown
+          - label: Phone
+            name: phone
+            widget: string
+          - label: Mail
+            name: mail
+            widget: string
           - label: Text
             name: text
             widget: markdown
