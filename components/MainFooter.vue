@@ -13,7 +13,7 @@ footer.footer
 
     .footer__column
       a Chi siamo
-      a Novita
+      nuxt-link(to='/novita') Novita
       a Contatti
 
     .footer__column

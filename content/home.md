@@ -21,6 +21,7 @@ sections:
       Nam ac nulla neque. Aliquam posuere erat sit amet turpis gravida, sit amet imperdiet nibh feugiat. Mauris ut lobortis sem. Aliquam maximus vestibulum tortor, vitae sollicitudin mi feugiat id.
     color: white
     margins: true
+    border: false
   - type: gallery
     images:
       - title: vcvyxcvyxc
@@ -62,6 +63,7 @@ sections:
     color: pink
     margins: true
     serif: true
+    border: true
   - type: image
     image: /img/foto-06-10-18-16-01-22-43c158a6-5a9b-11eb-85aa-02a8dc75caa2-2.jpg
   - type: text

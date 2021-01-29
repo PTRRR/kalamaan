@@ -1,12 +1,13 @@
 <template lang="pug">
 article.text(:class='getTextClasses(data)')
-  .text__title
-    h2(v-if='data.title') {{ data.title }}
+  .text__inner
+    .text__title
+      h2(v-if='data.title') {{ data.title }}
 
-  .text__content(
-    :style='getParagraphCssStyle(data)',
-    v-html='renderMarkdown(data.content)'
-  )
+    .text__content(
+      :style='getParagraphCssStyle(data)',
+      v-html='renderMarkdown(data.content)'
+    )
 </template>
 
 <script>
@@ -40,6 +41,7 @@ export default {
           'text--margins': data.margins,
           'text--center': data.center,
           'text--serif': data.serif,
+          'text--border': data.border,
         },
       ]
     },
@@ -61,18 +63,22 @@ export default {
 
   h2 {
     border-color: inherit;
-    /* border-bottom: solid $border-width; */
-    width: max-content;
+    border-bottom: solid $border-width;
+    /* width: max-content; */
     text-transform: uppercase;
     padding-bottom: $v-padding * 0.5;
     margin-bottom: $v-padding * 0.5;
     @include heading-crop;
   }
 
-  &__title,
-  &__content {
-    margin: auto;
+  &__inner {
     max-width: $s-max-width;
+    margin: auto;
+
+    #{$t}--border & {
+      padding: $v-padding * 0.5;
+      border: solid $border-width;
+    }
   }
 
   &--columns {

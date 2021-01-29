@@ -5,6 +5,7 @@
 
   .menu__sections
     a Chi siamo
+    nuxt-link(to='/projetti') Projetti
     nuxt-link(to='/novita') Novita
     a Contatti
     a.menu--highlight Dona
@@ -21,6 +22,7 @@
   .menu__panel
     .menu__panel-sections
       a Chi siamo
+      nuxt-link(to='/projetti') Projetti
       nuxt-link(to='/novita') Novita
       a Contatti
 </template>
@@ -92,8 +94,13 @@ export default {
   &--highlight {
     padding: $menu-padding * 0.5;
     margin: -$menu-padding * 0.5 0;
-    background-color: $red;
+    background-color: transparent;
     color: inherit;
+    border: solid $border-width;
+
+    #{$m}--text & {
+      background-color: $pink;
+    }
   }
 
   &__panel-sections {
@@ -176,6 +183,7 @@ export default {
 
     &__mobile {
       display: flex;
+      align-items: center;
     }
 
     &__panel {

@@ -60,6 +60,10 @@ page_builder: &PAGE_BUILDER
         name: serif
         required: false
         widget: boolean
+      - label: Border
+        name: border
+        required: false
+        widget: boolean
   - label: Gallery
     name: gallery
     summary: Gallery
@@ -137,6 +141,26 @@ collections:
         editor:
           preview: false
         fields:
+          - label: Sections
+            name: sections
+            widget: list
+            types: *PAGE_BUILDER
+
+      - label: Projetti
+        name: projetti
+        file: content/projetti.md
+        create: true
+        slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+        editor:
+          preview: false
+        fields:
+          - label: Gallery
+            name: gallery
+            widget: list
+            allow_add: true
+            label_singular: image
+            summary: '{{title}}'
+            fields: *GALLERY
           - label: Sections
             name: sections
             widget: list
